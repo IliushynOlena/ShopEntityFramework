@@ -1,4 +1,6 @@
-﻿namespace ShopEntityFramework
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace ShopEntityFramework
 {
     class Position
     {
@@ -28,6 +30,16 @@
     class Category
     {
 
+    }
+    class ShopDbContext : DbContext
+    {
+        public DbSet<Position> Positions { get; set; }
+        public DbSet<Worker> Workers { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Shop> Shops { get; set; }
     }
     internal class Program
     {
